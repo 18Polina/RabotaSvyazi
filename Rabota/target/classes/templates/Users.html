@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>ПРАКТИЧЕСКАЯ РАБОТА</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body style="background:#D7C9EB ">
+<h3 style="text-align: center;color: cornflowerblue"> Добавление пользователя: </h3>
+<form th:action="${'/Users/add/'}" method="post">
+  <input style="text-align: center" size="25"  type="text" name="name" placeholder="Введите имя человека">
+    <select  style="margin-bottom: 20px" name="number">
+      <div th:each="element : ${pasport}">
+      <option th:text="${element.number}"></option>
+      </div>
+    </select>
+  <br>
+  <button style="color: blueviolet;height: 20px;width: 150px;margin-bottom: 20px" type="submit">Добавить человека</button><br>
+</form>
+<form th:action="${'/Users/add/'}" method="post">
+  <input style="text-align: center" size="25"  type="text" name="name" placeholder="Введите имя человека">
+  <select  style="margin-bottom: 20px" name="number">
+    <div th:each="element : ${pasport}">
+      <option th:text="${element.number}"></option>
+    </div>
+  </select>
+  <br>
+  <button style="color: blueviolet;height: 20px;width: 150px;margin-bottom: 20px" type="submit">Добавить человека</button><br>
+  <a style="color: #6E00EB" href="/"> Назад</a>
+</form>
+</body>
+</html>

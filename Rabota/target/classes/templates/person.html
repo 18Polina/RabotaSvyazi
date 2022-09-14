@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ПРАКТИЧЕСКАЯ РАБОТА  </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body style="background:#D7C9EB ">
+<h3 style="text-align: center;color: cornflowerblue" > Добавить нового студента</h3>
+<form th:action="${'/person/add/'}" method="post">
+        <select style="margin-bottom: 20px"   name="student">
+            <div th:each="element : ${students}">
+                <option th:text="${element.name}"></option>
+            </div>
+        </select>
+    <select style="margin-bottom: 20px"  name="universiti">
+            <div th:each="element : ${universities}">
+                <option th:text="${element.name}"></option>
+            </div>
+        </select>
+    <br>
+    <button style="color: #6E00EB;margin-bottom: 20px"  type="submit">Добавить человека</button><br>
+    <a style="color: #6E00EB" href="/"> Назад</a>
+</form>
+</body>
+</html>
